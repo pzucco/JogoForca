@@ -1,19 +1,17 @@
 package impl;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import core.Jogada;
-import core.JogoForca;
 import interfaces.I_JogoForcaAdapter;
 
 public class JogoForcaTerminalAdapter implements I_JogoForcaAdapter<JogadorEmTerminal> {
-
-	List<JogadorEmTerminal> listaInicialJogadores;
 	
-	public JogoForcaTerminalAdapter(List<JogadorEmTerminal> listaInicialJogadores) {
+	public JogoForcaTerminalAdapter() {
 		super();
-		this.listaInicialJogadores = listaInicialJogadores;
 	}
 
 	public void apresentar(String mensagem)
@@ -208,7 +206,32 @@ public class JogoForcaTerminalAdapter implements I_JogoForcaAdapter<JogadorEmTer
 
 	@Override
 	public List<JogadorEmTerminal> solicitarJogadores() throws Exception {
-		return listaInicialJogadores;
+		
+		ArrayList<JogadorEmTerminal> listaJogadores = new ArrayList<JogadorEmTerminal>();
+		String nomeJogadorA = perguntar("Nome Jogador A");
+		String nomeJogadorB = perguntar("Nome Jogador B");
+		String nomeJogadorC = perguntar("Nome Jogador C");
+		listaJogadores.add(new JogadorEmTerminal( nomeJogadorA ));
+		listaJogadores.add(new JogadorEmTerminal( nomeJogadorB ));
+		listaJogadores.add(new JogadorEmTerminal( nomeJogadorC ));
+		
+		while(true)
+		{
+			String nomeOutroJogador = perguntar("Nome Jogador Adicional");
+			if (nomeOutroJogador.equals(""))
+				break;
+			listaJogadores.add(new JogadorEmTerminal( nomeOutroJogador ));
+		}
+		apresentar("");
+		
+		return listaJogadores;
+	}
+	
+	private String perguntar(String mensagem) throws IOException
+	{
+		System.out.print(mensagem + " > ");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		return br.readLine();	
 	}
 
 	@Override
