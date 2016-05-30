@@ -7,11 +7,11 @@ import core.Jogada;
 import core.JogoForca;
 import interfaces.I_JogoForcaAdapter;
 
-public class JogoForcaEmTerminal implements I_JogoForcaAdapter<JogadorEmTerminal> {
+public class JogoForcaTerminalAdapter implements I_JogoForcaAdapter<JogadorEmTerminal> {
 
 	List<JogadorEmTerminal> listaInicialJogadores;
 	
-	public JogoForcaEmTerminal(List<JogadorEmTerminal> listaInicialJogadores) {
+	public JogoForcaTerminalAdapter(List<JogadorEmTerminal> listaInicialJogadores) {
 		super();
 		this.listaInicialJogadores = listaInicialJogadores;
 	}
@@ -22,20 +22,20 @@ public class JogoForcaEmTerminal implements I_JogoForcaAdapter<JogadorEmTerminal
 	}
 	
 	@Override
-	public void apresentarMesa(JogoForca<JogadorEmTerminal> jogoForca) throws Exception {
+	public void apresentarMesa(JogadorEmTerminal jogadorA, JogadorEmTerminal jogadorB, JogadorEmTerminal jogadorC, List<JogadorEmTerminal> outrosJogadores) throws Exception {
 		apresentar("Mesa:");
-		apresentar(" (A) " + jogoForca.getJogadorA().getNome());
-		apresentar(" (B) " + jogoForca.getJogadorB().getNome());
-		apresentar(" (C) " + jogoForca.getJogadorC().getNome());
-		for (int i = 3; i < jogoForca.getJogadores().size(); i++)
+		apresentar(" (A) " + jogadorA.getNome());
+		apresentar(" (B) " + jogadorB.getNome());
+		apresentar(" (C) " + jogadorC.getNome());
+		for (JogadorEmTerminal outroJogador : outrosJogadores)
 		{
-			apresentar(" (*) " + jogoForca.getJogadores().get(i));
+			apresentar(" (*) " + outroJogador.getNome());
 		}
 		apresentar("");
 	}
 	
 	@Override
-	public void eventoJogoIniciado(JogoForca<JogadorEmTerminal> jogoForca) {
+	public void eventoJogoIniciado() {
 		apresentar("");
 		apresentar("JOGO DA FORCA INICIADO!");
 	}
@@ -209,28 +209,6 @@ public class JogoForcaEmTerminal implements I_JogoForcaAdapter<JogadorEmTerminal
 	@Override
 	public List<JogadorEmTerminal> solicitarJogadores() throws Exception {
 		return listaInicialJogadores;
-	}
-	
-	
-	//
-	// Main ===================================================================
-	//
-	public static void main(String[] args) throws Exception
-	{
-		List<JogadorEmTerminal> listaInicialJogadores = new ArrayList<JogadorEmTerminal>();
-		
-		listaInicialJogadores.add( new JogadorEmTerminal("jogador1") );
-		listaInicialJogadores.add( new JogadorEmTerminal("jogador2") );
-		listaInicialJogadores.add( new JogadorEmTerminal("jogador3") );
-		
-		JogoForcaEmTerminal jogoForcaEmTerminal = new JogoForcaEmTerminal(listaInicialJogadores);
-		jogoForcaEmTerminal .jogar();
-	}
-
-	void jogar() throws Exception
-	{
-		JogoForca<JogadorEmTerminal> jogoForca = new JogoForca<JogadorEmTerminal>(this);
-		jogoForca.jogar();	
 	}
 
 	@Override

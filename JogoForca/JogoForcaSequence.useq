@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.9" icons="true">  
+  <object id="1" language="java" name="core.JogoForca" project="JogoForca" file="/JogoForca/src/core/JogoForca.java" 
+    binary="false" label="jogoForca" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="264" y="0"/>    
+    <execution id="2">      
+      <position height="84" width="0" x="0" y="93"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="21" width="0" x="0" y="135"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="3186" width="0" x="0" y="210"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="3123" width="0" x="0" y="252"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="0" x="0" y="556"/>    
+    </execution>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="1164"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="1028"/>    
+    </execution>    
+    <execution id="33">      
+      <position height="21" width="0" x="0" y="1604"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="21" width="0" x="0" y="1468"/>    
+    </execution>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="1740"/>    
+    </execution>    
+    <execution id="39">      
+      <position height="1237" width="0" x="0" y="1792"/>    
+    </execution>    
+    <execution id="59">      
+      <position height="21" width="0" x="0" y="2474"/>    
+    </execution>    
+    <execution id="63">      
+      <position height="21" width="0" x="0" y="2610"/>    
+    </execution>    
+    <execution id="69">      
+      <position height="21" width="0" x="0" y="2830"/>    
+    </execution>    
+    <execution id="74">      
+      <position height="21" width="7" x="98" y="472"/>    
+    </execution>    
+    <execution id="75">      
+      <position height="21" width="7" x="98" y="944"/>    
+    </execution>    
+    <execution id="76">      
+      <position height="21" width="7" x="98" y="1384"/>    
+    </execution>  
+  </object>  
+  <object id="77" language="java" name="interfaces.I_JogoForcaAdapter" project="JogoForca" 
+    file="/JogoForca/src/interfaces/I_JogoForcaAdapter.java" binary="false" label="adapter" type="interface" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="9">      
+      <position height="63" width="0" x="0" y="283"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="147" width="0" x="0" y="367"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="63" width="0" x="0" y="587"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="63" width="0" x="0" y="671"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="231" width="0" x="0" y="755"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="63" width="0" x="0" y="1059"/>    
+    </execution>    
+    <execution id="27">      
+      <position height="231" width="0" x="0" y="1195"/>    
+    </execution>    
+    <execution id="31">      
+      <position height="63" width="0" x="0" y="1499"/>    
+    </execution>    
+    <execution id="35">      
+      <position height="63" width="0" x="0" y="1635"/>    
+    </execution>    
+    <execution id="41">      
+      <position height="63" width="0" x="0" y="3039"/>    
+    </execution>    
+    <execution id="43">      
+      <position height="63" width="0" x="0" y="3123"/>    
+    </execution>    
+    <execution id="45">      
+      <position height="63" width="0" x="0" y="3207"/>    
+    </execution>    
+    <execution id="47">      
+      <position height="63" width="0" x="0" y="3291"/>    
+    </execution>    
+    <execution id="49">      
+      <position height="63" width="0" x="0" y="1823"/>    
+    </execution>    
+    <execution id="51">      
+      <position height="63" width="0" x="0" y="1907"/>    
+    </execution>    
+    <execution id="53">      
+      <position height="273" width="0" x="0" y="1991"/>    
+    </execution>    
+    <execution id="71">      
+      <position height="63" width="0" x="0" y="2861"/>    
+    </execution>    
+    <execution id="61">      
+      <position height="63" width="0" x="0" y="2505"/>    
+    </execution>    
+    <execution id="67">      
+      <position height="63" width="0" x="0" y="2725"/>    
+    </execution>    
+    <execution id="65">      
+      <position height="63" width="0" x="0" y="2641"/>    
+    </execution>    
+    <execution id="55">      
+      <position height="63" width="0" x="0" y="2285"/>    
+    </execution>    
+    <execution id="57">      
+      <position height="63" width="0" x="0" y="2369"/>    
+    </execution>    
+    <execution id="73">      
+      <position height="63" width="0" x="0" y="2945"/>    
+    </execution>    
+    <execution id="127">      
+      <position height="21" width="7" x="319" y="881"/>    
+    </execution>    
+    <execution id="128">      
+      <position height="21" width="7" x="319" y="1321"/>    
+    </execution>    
+    <execution id="129">      
+      <position height="21" width="7" x="319" y="2201"/>    
+    </execution>    
+    <execution id="130">      
+      <position height="21" width="7" x="319" y="409"/>    
+    </execution>  
+  </object>  
+  <object id="131" language="java" name="impl.JogoForcaTerminalAdapter" project="JogoForca" 
+    file="/JogoForca/src/impl/JogoForcaTerminalAdapter.java" binary="false" label="jogoForcaTerminalAdapter" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="656" y="0"/>    
+    <execution id="81">      
+      <position height="63" width="210" x="453" y="388"/>    
+    </execution>    
+    <execution id="79">      
+      <position height="21" width="210" x="453" y="304"/>    
+    </execution>    
+    <execution id="86">      
+      <position height="21" width="210" x="453" y="692"/>    
+    </execution>    
+    <execution id="88">      
+      <position height="147" width="210" x="453" y="776"/>    
+    </execution>    
+    <execution id="91">      
+      <position height="21" width="210" x="453" y="1080"/>    
+    </execution>    
+    <execution id="136">      
+      <position height="21" width="7" x="555" y="818"/>    
+    </execution>    
+    <execution id="93">      
+      <position height="147" width="210" x="453" y="1216"/>    
+    </execution>    
+    <execution id="140">      
+      <position height="21" width="7" x="555" y="1258"/>    
+    </execution>    
+    <execution id="96">      
+      <position height="21" width="210" x="453" y="1520"/>    
+    </execution>    
+    <execution id="98">      
+      <position height="21" width="210" x="453" y="1656"/>    
+    </execution>    
+    <execution id="108">      
+      <position height="21" width="210" x="453" y="1844"/>    
+    </execution>    
+    <execution id="112">      
+      <position height="231" width="210" x="453" y="2012"/>    
+    </execution>    
+    <execution id="144">      
+      <position height="21" width="7" x="555" y="2138"/>    
+    </execution>    
+    <execution id="122">      
+      <position height="21" width="210" x="453" y="2306"/>    
+    </execution>    
+    <execution id="124">      
+      <position height="21" width="210" x="453" y="2390"/>    
+    </execution>    
+    <execution id="110">      
+      <position height="21" width="210" x="453" y="1928"/>    
+    </execution>    
+    <execution id="116">      
+      <position height="21" width="210" x="453" y="2526"/>    
+    </execution>    
+    <execution id="120">      
+      <position height="21" width="210" x="453" y="2662"/>    
+    </execution>    
+    <execution id="118">      
+      <position height="21" width="210" x="453" y="2746"/>    
+    </execution>    
+    <execution id="114">      
+      <position height="21" width="210" x="453" y="2882"/>    
+    </execution>    
+    <execution id="106">      
+      <position height="21" width="210" x="453" y="3312"/>    
+    </execution>    
+    <execution id="104">      
+      <position height="21" width="210" x="453" y="3228"/>    
+    </execution>    
+    <execution id="102">      
+      <position height="21" width="210" x="453" y="3144"/>    
+    </execution>    
+    <execution id="100">      
+      <position height="21" width="210" x="453" y="3060"/>    
+    </execution>    
+    <execution id="126">      
+      <position height="21" width="210" x="453" y="2966"/>    
+    </execution>    
+    <execution id="84">      
+      <position height="21" width="210" x="453" y="608"/>    
+    </execution>  
+  </object>  
+  <object id="145" language="java" name="impl.JogadorEmTerminal" project="JogoForca" 
+    file="/JogoForca/src/impl/JogadorEmTerminal.java" binary="false" label="jogadorEmTerminal" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="883" y="0"/>    
+    <execution id="134">      
+      <position height="63" width="160" x="667" y="797"/>    
+    </execution>    
+    <execution id="138">      
+      <position height="63" width="160" x="667" y="1237"/>    
+    </execution>    
+    <execution id="142">      
+      <position height="147" width="160" x="667" y="2033"/>    
+    </execution>    
+    <execution id="151">      
+      <position height="21" width="7" x="744" y="2075"/>    
+    </execution>  
+  </object>  
+  <object id="152" language="java" name="core.Jogada" project="JogoForca" file="/JogoForca/src/core/Jogada.java" 
+    binary="false" label="jogada" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="819" y="0"/>    
+    <execution id="149">      
+      <position height="63" width="74" x="831" y="2054"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="JogoForca(interfaces.I_JogoForcaAdapter&lt;T_Jogador&gt;)" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="jogar():boolean" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="erro(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="solicitarJogadores():java.util.List&lt;T_Jogador&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="validarJogadores():boolean" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="erro(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" operation="apresentarMesa(T_Jogador,T_Jogador,T_Jogador,java.util.List&lt;T_Jogador&gt;):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="18" operation="solicitarPalavraA(T_Jogador):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="20" operation="validarPalavra(java.lang.String):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="erro(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="setPalavraA(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" operation="solicitarPalavraB(T_Jogador):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="27"/>  
+  </message>  
+  <message id="28" operation="validarPalavra(java.lang.String):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" operation="erro(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="32" operation="setPalavraB(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="33"/>  
+  </message>  
+  <message id="34" operation="eventoJogoIniciado():void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="35"/>  
+  </message>  
+  <message id="36" operation="jogoEmAndamento():boolean" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="38" operation="vezDoJogador(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="40" operation="eventoJogadorVenceuPalpitePalavrasCerto(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="41"/>  
+  </message>  
+  <message id="42" operation="eventoMesaVenceuLetrasReveladas(java.util.List&lt;T_Jogador&gt;):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="43"/>  
+  </message>  
+  <message id="44" operation="eventoMesaDerrotadaVidasEsgotadas(java.util.List&lt;T_Jogador&gt;):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="45"/>  
+  </message>  
+  <message id="46" operation="eventoMesaDerrotadaSemJogadores():void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="47"/>  
+  </message>  
+  <message id="48" 
+    operation="atualizarEstadoJogo(java.util.List&lt;T_Jogador&gt;,java.lang.String,java.lang.String,int):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="49"/>  
+  </message>  
+  <message id="50" operation="eventoVezDe(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="51"/>  
+  </message>  
+  <message id="52" operation="solicitarJogada(T_Jogador):core.Jogada" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="53"/>  
+  </message>  
+  <message id="54" operation="eventoLetraReveladaA(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="55"/>  
+  </message>  
+  <message id="56" operation="eventoLetraReveladaB(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="57"/>  
+  </message>  
+  <message id="58" operation="jogadorVence(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="59"/>  
+  </message>  
+  <message id="60" operation="eventoJogadorVenceuPalpitePalavrasCerto(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="61"/>  
+  </message>  
+  <message id="62" operation="perderVida():void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="63"/>  
+  </message>  
+  <message id="64" operation="eventoMesaPerdeuVidaPalpiteLetraErrado():void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="65"/>  
+  </message>  
+  <message id="66" operation="eventoMesaPerdeuVidaPalpiteLetraRepetido():void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="67"/>  
+  </message>  
+  <message id="68" operation="jogadorPerde(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="69"/>  
+  </message>  
+  <message id="70" operation="eventoJogadorRemovidoPalpitePalavrasErrado(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="71"/>  
+  </message>  
+  <message id="72" operation="eventoJogadorRemovidoAbandono(T_Jogador):void" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="73"/>  
+  </message>  
+  <message id="78" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="79"/>  
+  </message>  
+  <message id="80" asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="81"/>  
+  </message>  
+  <message id="82" asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="74"/>  
+  </message>  
+  <message id="83" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="84"/>  
+  </message>  
+  <message id="85" asynchronous="false">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="86"/>  
+  </message>  
+  <message id="87" asynchronous="false">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="88"/>  
+  </message>  
+  <message id="89" asynchronous="false">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="75"/>  
+  </message>  
+  <message id="90" asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="91"/>  
+  </message>  
+  <message id="92" asynchronous="false">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="93"/>  
+  </message>  
+  <message id="94" asynchronous="false">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="76"/>  
+  </message>  
+  <message id="95" asynchronous="false">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="96"/>  
+  </message>  
+  <message id="97" asynchronous="false">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="98"/>  
+  </message>  
+  <message id="99" asynchronous="false">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="100"/>  
+  </message>  
+  <message id="101" asynchronous="false">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="102"/>  
+  </message>  
+  <message id="103" asynchronous="false">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="104"/>  
+  </message>  
+  <message id="105" asynchronous="false">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="106"/>  
+  </message>  
+  <message id="107" asynchronous="false">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="108"/>  
+  </message>  
+  <message id="109" asynchronous="false">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="110"/>  
+  </message>  
+  <message id="111" asynchronous="false">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="112"/>  
+  </message>  
+  <message id="113" asynchronous="false">    
+    <end type="SOURCE" refId="71"/>    
+    <end type="TARGET" refId="114"/>  
+  </message>  
+  <message id="115" asynchronous="false">    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="116"/>  
+  </message>  
+  <message id="117" asynchronous="false">    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="118"/>  
+  </message>  
+  <message id="119" asynchronous="false">    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="120"/>  
+  </message>  
+  <message id="121" asynchronous="false">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="122"/>  
+  </message>  
+  <message id="123" asynchronous="false">    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="124"/>  
+  </message>  
+  <message id="125" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="126"/>  
+  </message>  
+  <message id="132" asynchronous="false">    
+    <end type="SOURCE" refId="81"/>    
+    <end type="TARGET" refId="130"/>  
+  </message>  
+  <message id="133" asynchronous="false">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="134"/>  
+  </message>  
+  <message id="135" asynchronous="false">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="127"/>  
+  </message>  
+  <message id="137" asynchronous="false">    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="138"/>  
+  </message>  
+  <message id="139" asynchronous="false">    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="128"/>  
+  </message>  
+  <message id="141" asynchronous="false">    
+    <end type="SOURCE" refId="112"/>    
+    <end type="TARGET" refId="142"/>  
+  </message>  
+  <message id="143" asynchronous="false">    
+    <end type="SOURCE" refId="112"/>    
+    <end type="TARGET" refId="129"/>  
+  </message>  
+  <message id="146" asynchronous="false">    
+    <end type="SOURCE" refId="134"/>    
+    <end type="TARGET" refId="136"/>  
+  </message>  
+  <message id="147" asynchronous="false">    
+    <end type="SOURCE" refId="138"/>    
+    <end type="TARGET" refId="140"/>  
+  </message>  
+  <message id="148" asynchronous="false">    
+    <end type="SOURCE" refId="142"/>    
+    <end type="TARGET" refId="149"/>  
+  </message>  
+  <message id="150" asynchronous="false">    
+    <end type="SOURCE" refId="142"/>    
+    <end type="TARGET" refId="144"/>  
+  </message>  
+  <message id="153" asynchronous="false">    
+    <end type="SOURCE" refId="149"/>    
+    <end type="TARGET" refId="151"/>  
+  </message>
+</sequence-diagram>

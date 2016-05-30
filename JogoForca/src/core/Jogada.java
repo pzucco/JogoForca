@@ -26,7 +26,7 @@ public class Jogada {
 	
 	public static Jogada palpiteDeLetra(char letra)
 	{
-		return new Jogada(TipoJogada.PALAVRAS, "", "", letra);
+		return new Jogada(TipoJogada.LETRA, "", "", letra);
 	}
 	
 	public static Jogada abandono()

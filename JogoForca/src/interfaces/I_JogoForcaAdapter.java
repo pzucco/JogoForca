@@ -2,12 +2,11 @@ package interfaces;
 import java.util.List;
 
 import core.Jogada;
-import core.JogoForca;
 
 public interface I_JogoForcaAdapter<T_Jogador> {
 	
-	public void apresentarMesa(JogoForca<T_Jogador> jogoForca)  throws Exception;
-	public void eventoJogoIniciado(JogoForca<T_Jogador> jogoForca) throws Exception;
+	public void apresentarMesa(T_Jogador jogadorA, T_Jogador jogadorB, T_Jogador jogadorC, List<T_Jogador> outrosJogadores)  throws Exception;
+	public void eventoJogoIniciado() throws Exception;
 
 	public void atualizarEstadoJogo(
 			List<T_Jogador> jogadores, 
@@ -40,5 +39,4 @@ public interface I_JogoForcaAdapter<T_Jogador> {
 	
 	public Jogada solicitarJogada(T_Jogador jogador) throws Exception;
 	
-
 }

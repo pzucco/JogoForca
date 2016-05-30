@@ -14,18 +14,18 @@ public class JogoForca <T_Jogador> {
 	private String palavraReveladaA = "";
 	private String palavraReveladaB = "";
 	
-	private I_JogoForcaAdapter<T_Jogador> adaptador;
+	private final I_JogoForcaAdapter<T_Jogador> adapter;
+	private List<T_Jogador> jogadoresIniciais;
 	private List<T_Jogador> jogadores;
 	
 	private T_Jogador vencedor = null;
 	private boolean mesaVenceu = false;
 	private boolean emExecucao = false;
 	
-	public JogoForca(I_JogoForcaAdapter<T_Jogador> interfacer)
+	public JogoForca(I_JogoForcaAdapter<T_Jogador> adapter)
 	{
-		this.adaptador = interfacer;
+		this.adapter = adapter;
 	}
-	
 	
 	//
 	// Vidas ==================================================================
@@ -38,16 +38,18 @@ public class JogoForca <T_Jogador> {
 	//
 	// Getters jogadores ======================================================
 	//
-	public T_Jogador getJogadorA() { return jogadores.get(0); }
-	public T_Jogador getJogadorB() { return jogadores.get(1); }
-	public T_Jogador getJogadorC() { return jogadores.get(2); }
+	public T_Jogador getJogadorA() { return jogadoresIniciais.get(0); }
+	public T_Jogador getJogadorB() { return jogadoresIniciais.get(1); }
+	public T_Jogador getJogadorC() { return jogadoresIniciais.get(2); }
+	public List<T_Jogador> getOutrosJogadores() { return jogadoresIniciais.subList(3, jogadoresIniciais.size()); }
+	
 	private T_Jogador getJogadorSorteado()
 	{
 		Random rand = new Random();
 		return jogadores.get(rand.nextInt(jogadores.size()));
 	}
 	
-	public List<T_Jogador> getJogadores() {
+	private List<T_Jogador> getJogadores() {
 		return Collections.unmodifiableList(jogadores);
 	}
 	
@@ -101,40 +103,41 @@ public class JogoForca <T_Jogador> {
 	{	
 		if (emExecucao)
 		{
-			adaptador.erro("PARTIDA JA FOI INICIADA!");
+			adapter.erro("PARTIDA JA FOI INICIADA!");
 			return false;
 		}
 		emExecucao = true;
 		
-		jogadores = new ArrayList<T_Jogador> (adaptador.solicitarJogadores());
+		jogadores = new ArrayList<T_Jogador> (adapter.solicitarJogadores());
+		jogadoresIniciais = Collections.unmodifiableList(jogadores);
 		
 		if (!validarJogadores())
 		{
-			adaptador.erro("LISTA DE JOGADORES INVALIDA!");
+			adapter.erro("LISTA DE JOGADORES INVALIDA!");
 			emExecucao = false;
 			return false;
 		}
 		
 		vidas = 6;
-		adaptador.apresentarMesa(this);
+		adapter.apresentarMesa(getJogadorA(), getJogadorB(), getJogadorC(), getOutrosJogadores());
 		
-		setPalavraA( adaptador.solicitarPalavraA( getJogadorA() ) );
+		setPalavraA( adapter.solicitarPalavraA( getJogadorA() ) );
 		if (!validarPalavra(palavraA))
 		{
-			adaptador.erro("PALAVRA INVALIDA!");
+			adapter.erro("PALAVRA INVALIDA!");
 			emExecucao = false;
 			return false;
 		}
 		
-		setPalavraB( adaptador.solicitarPalavraB( getJogadorB() ) );
+		setPalavraB( adapter.solicitarPalavraB( getJogadorB() ) );
 		if (!validarPalavra(palavraB))
 		{
-			adaptador.erro("PALAVRA INVALIDA!");
+			adapter.erro("PALAVRA INVALIDA!");
 			emExecucao = false;
 			return false;
 		}
 		
-		adaptador.eventoJogoIniciado(this);
+		adapter.eventoJogoIniciado();
 		
 		vezDoJogador( getJogadorC() );
 		
@@ -145,23 +148,23 @@ public class JogoForca <T_Jogador> {
 		
 		if (vencedor != null)
 		{
-			adaptador.eventoJogadorVenceuPalpitePalavrasCerto( vencedor );
+			adapter.eventoJogadorVenceuPalpitePalavrasCerto( vencedor );
 		}
 		else
 		{
 			if (mesaVenceu)
 			{
-				adaptador.eventoMesaVenceuLetrasReveladas( getJogadores() );
+				adapter.eventoMesaVenceuLetrasReveladas( getJogadores() );
 			}
 			else
 			{
 				if (vidas == 0)
 				{
-					adaptador.eventoMesaDerrotadaVidasEsgotadas( getJogadores() );
+					adapter.eventoMesaDerrotadaVidasEsgotadas( getJogadores() );
 				}
 				if (jogadores.isEmpty())
 				{
-					adaptador.eventoMesaDerrotadaSemJogadores();
+					adapter.eventoMesaDerrotadaSemJogadores();
 				}
 			}
 		}
@@ -175,10 +178,10 @@ public class JogoForca <T_Jogador> {
 	//
 	private void vezDoJogador(T_Jogador jogador) throws Exception
 	{
-		adaptador.atualizarEstadoJogo(getJogadores(), palavraReveladaA, palavraReveladaB, vidas);
-		adaptador.eventoVezDe(jogador);
+		adapter.atualizarEstadoJogo(getJogadores(), palavraReveladaA, palavraReveladaB, vidas);
+		adapter.eventoVezDe(jogador);
 		
-		Jogada jogada = adaptador.solicitarJogada(jogador);
+		Jogada jogada = adapter.solicitarJogada(jogador);
 		
 		switch (jogada.tipo){
 			
@@ -193,7 +196,7 @@ public class JogoForca <T_Jogador> {
 			if (!palpiteA.equals(palavraA))
 			{
 				jogadorPerde(jogador);
-				adaptador.eventoJogadorRemovidoPalpitePalavrasErrado(jogador);
+				adapter.eventoJogadorRemovidoPalpitePalavrasErrado(jogador);
 			}
 			
 			//
@@ -202,7 +205,7 @@ public class JogoForca <T_Jogador> {
 			else if (!palpiteB.equals(palavraB))
 			{
 				jogadorPerde(jogador);
-				adaptador.eventoJogadorRemovidoPalpitePalavrasErrado(jogador);
+				adapter.eventoJogadorRemovidoPalpitePalavrasErrado(jogador);
 			}
 			
 			//
@@ -211,7 +214,7 @@ public class JogoForca <T_Jogador> {
 			else
 			{
 				jogadorVence(jogador);
-				adaptador.eventoJogadorVenceuPalpitePalavrasCerto(jogador);
+				adapter.eventoJogadorVenceuPalpitePalavrasCerto(jogador);
 			}
 			
 			break;
@@ -226,7 +229,7 @@ public class JogoForca <T_Jogador> {
 			if (palavraReveladaA.contains(palpiteLetra) || palavraReveladaB.contains(palpiteLetra) )
 			{
 				perderVida();
-				adaptador.eventoMesaPerdeuVidaPalpiteLetraRepetido();
+				adapter.eventoMesaPerdeuVidaPalpiteLetraRepetido();
 			}
 			else
 			{
@@ -236,7 +239,7 @@ public class JogoForca <T_Jogador> {
 				if (!palavraA.contains(palpiteLetra) && !palavraB.contains(palpiteLetra) )
 				{
 					perderVida();
-					adaptador.eventoMesaPerdeuVidaPalpiteLetraErrado();
+					adapter.eventoMesaPerdeuVidaPalpiteLetraErrado();
 				}
 				else {
 				
@@ -252,7 +255,7 @@ public class JogoForca <T_Jogador> {
 								palavraReveladaA = palavraReveladaA.substring(0, i) + palpiteLetra + palavraReveladaA.substring(i+1);
 							}
 						}
-						adaptador.eventoLetraReveladaA(palavraReveladaA);
+						adapter.eventoLetraReveladaA(palavraReveladaA);
 					}
 					
 					//
@@ -267,7 +270,7 @@ public class JogoForca <T_Jogador> {
 								palavraReveladaB = palavraReveladaB.substring(0, i) + palpiteLetra + palavraReveladaB.substring(i+1);
 							}
 						}
-						adaptador.eventoLetraReveladaB(palavraReveladaB);
+						adapter.eventoLetraReveladaB(palavraReveladaB);
 					}
 				}
 				
@@ -287,7 +290,7 @@ public class JogoForca <T_Jogador> {
 		case ABANDONO:
 		
 			jogadorPerde(jogador);
-			adaptador.eventoJogadorRemovidoAbandono(jogador);
+			adapter.eventoJogadorRemovidoAbandono(jogador);
 			
 			break;
 			
